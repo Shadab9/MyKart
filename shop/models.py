@@ -21,7 +21,6 @@ class Contact(models.Model):
     email=models.CharField(max_length=50,default="")
     phone=models.CharField(max_length=10,default="")
     desc=models.CharField(max_length=500,default="")
-    print(name)
     def __str__(self):
         return self.name
     
