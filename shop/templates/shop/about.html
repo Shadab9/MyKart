@@ -8,9 +8,13 @@
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container">
-      <h1 class="display-3">My Awesome Cart</h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      <h1 class="display-3">Mykart</h1>
+      <p>MyKart is an Indian e-commerce company, headquartered in Bangalore, Karnataka, India, and incorporated in Singapore as a private limited company. The company initially focused on online book sales before expanding into other product categories such as consumer electronics, fashion, home essentials, groceries, and lifestyle products.
+
+The service competes primarily with Amazon's Indian subsidiary and domestic rival Snapdeal. As of March 2017, Flipkart held a 39.5% market share of India's e-commerce industry. Flipkart has a dominant position in the apparel segment, bolstered by its acquisition of Myntra, and was described as being "neck and neck" with Amazon in the sale of electronics and mobile phones. Flipkart also owns PhonePe, a mobile payments service based on the UPI.
+
+In August 2018, U.S.-based retail chain Walmart acquired a 77% controlling stake in Flipkart for US$16 billion, valuing Flipkart at around $20 billion.</p>
+      
     </div>
   </div>
 
@@ -18,19 +22,21 @@
     <!-- Example row of columns -->
     <div class="row">
       <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <h2>Sachin Bansal</h2>
+        <p>Sachin Bansal (born August 5, 1981) is an Indian entrepreneur. He is best known as the co-founder of Flipkart, that was acquired by Walmart (77 per cent stake) at $16 billion in 2018. During his over 11 year career at Flipkart, Bansal was CEO and chairman. In 2018, Bansal exited Flipkart following the Walmart deal.
+
+In 2007, Sachin Bansal and Binny Bansal (not related) founded Flipkart whose valuation in 2018 was $20.8 billion.[1] In 2018, Bansal held a 5.5 percent stake in Flipkart, which he sold to Walmart and his net worth then was a little over $1 billion. In May 2018, Bansal announced that after stepping down as the executive chairman of Flipkart, he would be focusing on pending personal projects, gaming and brushing up his coding skills. Sachin Bansal is now the managing director of Navi Group, a financial services company</p>
+        
       </div>
       <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <h2>Binny Bansal</h2>
+        <p>Binny Bansal (born 1982/1983) is an Indian billionaire Internet entrepreneur. In 2007 he co-founded the e-commerce platform Flipkart with Sachin Bansal (no relation) and served as the chief operating officer until 11 January 2016 and was then promoted to chief executive officer (CEO). In January 2017 he was promoted to Group CEO and resigned in November 2018 due to personal misconduct allegations of Flipkart. Binny is from Chandigarh and graduated from the Indian Institute of Technology Delhi with a degree in computer science and engineering. He is currently an anchor investor in the venture firm 021 Capital which focuses on investing in the fields of biotechnology, agritech, and the internet.</p>
+        
       </div>
       <div class="col-md-4">
-        <h2>Heading</h2>
-        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <h2>Sridhar Vembu</h2>
+        <p>Sridhar Vembu (born 1968) is an Indian billionaire business magnate and the founder and CEO of Zoho Corporation.[2] According to Forbes, he is the 59th richest Indian in the world with a net worth of US$2.5 billion, as of 2020. He was awarded India's fourth highest civilian award, the Padma Shri, in 2021</p>
+        
       </div>
     </div>
 
@@ -48,4 +54,20 @@
 </html>
 
 
+{% endblock %}
+{% block js %}
+<script>
+if (localStorage.getItem('cart') == null) {
+    var cart = {};
+} else {
+    cart = JSON.parse(localStorage.getItem('cart'));
+}
+console.log(cart);
+var sum = 0;
+for (item in cart) {
+    let qty = cart[item][0];
+    sum = sum + qty;
+}
+document.getElementById('cart').innerHTML = sum;
+</script>
 {% endblock %}
